@@ -19,8 +19,8 @@ public:
 	DX12Renderer();
 public:
 	void 	Initialize(HWND in_hwnd, int32_t in_widith, int32_t in_height);
-	void	Render();		//�`��
-	void	Terminate();	//�I��
+	void	Render();		//ここで編集できてしますので
+	void	Terminate();	//�I��
 private:
 	HWND	_window_hwnd;
 	int		_window_width;

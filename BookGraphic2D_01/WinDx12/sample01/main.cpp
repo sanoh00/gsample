@@ -38,9 +38,9 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPreInst, LPTSTR lpCmdLine
 		(LONG)(WINDOW_HEIGHT)
 	};
 	AdjustWindowRect(
-		&rect,                                    // ƒNƒ‰ƒCƒAƒ“ƒg‹éŒ`
-		WS_OVERLAPPED | WS_SYSMENU | WS_CAPTION,  // ƒEƒBƒ“ƒhƒEƒXƒ^ƒCƒ‹
-		FALSE                                     // ƒƒjƒ…[ƒtƒ‰ƒO
+		&rect,                                    // ã“ã‚Œ
+		WS_OVERLAPPED | WS_SYSMENU | WS_CAPTION,  // 
+		FALSE                                     // ï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[ï¿½tï¿½ï¿½ï¿½O
 	);
 
 	hwnd = CreateWindow(_T(CLASS_NAME),
@@ -48,8 +48,8 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPreInst, LPTSTR lpCmdLine
 		WS_OVERLAPPED | WS_SYSMENU | WS_CAPTION,
 		CW_USEDEFAULT,
 		CW_USEDEFAULT,
-		rect.right - rect.left,           // ƒEƒBƒ“ƒhƒE‚Ì•
-		rect.bottom - rect.top,           // ƒEƒBƒ“ƒhƒE‚Ì‚‚³
+		rect.right - rect.left,           // ï¿½Eï¿½Bï¿½ï¿½ï¿½hï¿½Eï¿½Ì•ï¿½
+		rect.bottom - rect.top,           // ï¿½Eï¿½Bï¿½ï¿½ï¿½hï¿½Eï¿½Ìï¿½ï¿½ï¿½
 		NULL,
 		NULL,
 		hInstance,
@@ -57,17 +57,17 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPreInst, LPTSTR lpCmdLine
 
 	ShowWindow(hwnd, nCmdShow);
 	UpdateWindow(hwnd);
-	DX12Renderer* renderer = new DX12Renderer();	//‰Šú‰»
+	DX12Renderer* renderer = new DX12Renderer();	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	renderer->Initialize(hwnd, WINDOW_WIDTH, WINDOW_HEIGHT);
 	do {
 		if (PeekMessage(&msg, NULL, 0U, 0U, PM_REMOVE)) {
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
-		renderer->Render();	//•`‰æ
+		renderer->Render();	//ï¿½`ï¿½ï¿½
 	} while (msg.message != WM_QUIT);
 	renderer->Terminate(); 
-	delete	renderer;	//Á‹
+	delete	renderer;	//ï¿½ï¿½ï¿½ï¿½
 	return (int)(msg.wParam);
 }
 
